@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) {
              setinverse = setinverse,
              getinverse = getinverse)
 }
-#Explanation of the above function:
+#Explanation of the first function:
 #1. Set the value of the matrix
 #We only need to use this subfunction if we want to change the matrix.
 #The second line of the subfunction x <<- y replaces the matrix x with the matrix y in the main function makeCacheMatrix.
@@ -24,7 +24,6 @@ makeCacheMatrix <- function(x = matrix()) {
 #i<<- NULL resets the value of the mean to NULL - we don't need the inverse of the old matrix any more!
 #The new inverse is calculated through the function cacheSolve
 #2. Get the value of the matrix
-
 #The next two subfunctions don't calculate the inverse. THey simpy store it's input value in a variable i
 #into the main function makeCacheMatrix("setinverse") and return it ()
 #3. set the value of the inverse
@@ -35,7 +34,6 @@ makeCacheMatrix <- function(x = matrix()) {
 ##The input of the second function is the object where makeCacheMatrix is stored.	
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
                 i <- x$getinverse()
         if(!is.null(i)) {
                 message("getting cached matrix")
